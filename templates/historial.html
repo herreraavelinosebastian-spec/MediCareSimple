@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historial · {{ paciente[1] }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: rgba(30,41,59,0.9);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #8b5cf6;
+        }
+        h1 { color: #8b5cf6; }
+        .btn {
+            background: #8b5cf6;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-secondary { background: #38bdf8; }
+        .btn-danger { background: #ef4444; }
+        .card {
+            background: rgba(30,41,59,0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #8b5cf6;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: white;
+        }
+        .historial-item {
+            background: #0f172a;
+            border-left: 4px solid #8b5cf6;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+        .historial-fecha {
+            color: #8b5cf6;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .historial-medico {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Historial de {{ paciente[1] }}</h1>
+            <div>
+                <a href="/medico" class="btn btn-secondary">← Volver</a>
+                <a href="/logout" class="btn btn-danger">Cerrar sesión</a>
+            </div>
+        </div>
+
+        <!-- Formulario nuevo historial -->
+        <div class="card">
+            <h2 style="color: #8b5cf6;">➕ Agregar entrada de consulta</h2>
+            {% set turno_id = request.args.get('turno_id') %}
+            {% if turno_id %}
+            <div style="background: #1e3a2f; border: 1px solid #10b981; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; color: #10b981;">
+                ✅ Al guardar, el turno se marcará automáticamente como <strong>completado</strong>.
+            </div>
+            {% endif %}
+            <form action="/medico/agregar_historial/{{ paciente[0] }}" method="POST">
+                {% if turno_id %}
+                <input type="hidden" name="turno_id" value="{{ turno_id }}">
+                {% endif %}
+                <div class="form-group">
+                    <label>Diagnóstico *</label>
+                    <textarea name="diagnostico" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Receta</label>
+                    <textarea name="receta" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Notas</label>
+                    <textarea name="notas" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn">💾 Guardar y completar consulta</button>
+            </form>
+        </div>
+
+        <!-- Historial existente -->
+        <div class="card">
+            <h2 style="color: #8b5cf6;">📜 Historial</h2>
+            {% if historial %}
+                {% for h in historial %}
+                <div class="historial-item">
+                    <div class="historial-fecha">{{ h[3] }}</div>
+                    <div class="historial-medico">Atendió: {{ h[6] }}</div>
+                    <div><strong>Diagnóstico:</strong> {{ h[4] }}</div>
+                    {% if h[5] %}<div><strong>Receta:</strong> {{ h[5] }}</div>{% endif %}
+                    {% if h[6] %}<div><strong>Notas:</strong> {{ h[6] }}</div>{% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+            <p>No hay historial</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

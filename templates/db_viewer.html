@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visor BD · Admin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        h1 { 
+            color: #38bdf8; 
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn {
+            background: #38bdf8;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .btn-secondary {
+            background: #64748b;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #38bdf8;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 800px;
+        }
+        th {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #334155;
+            font-weight: bold;
+        }
+        td {
+            padding: 0.8rem;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+        }
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .badge-admin { background: #38bdf8; color: black; }
+        .badge-medico { background: #2dd4bf; color: black; }
+        .badge-paciente { background: #8b5cf6; color: white; }
+        .badge-pendiente { background: #f59e0b; color: black; }
+        .badge-confirmado { background: #10b981; color: white; }
+        .badge-cancelado { background: #ef4444; color: white; }
+        .badge-completado { background: #6366f1; color: white; }
+        .hash {
+            font-family: monospace;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            color: #fecaca;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span>📊 Visor de Base de Datos</span>
+            </h1>
+            <div>
+                <a href="/admin" class="btn btn-secondary">← Volver al Panel</a>
+                <a href="/db-viewer" class="btn">🔄 Actualizar</a>
+            </div>
+        </div>
+
+        {% if datos %}
+            {% for tabla, registros in datos.items() %}
+            <div class="card">
+                <h2>
+                    <span>📁 {{ tabla | upper }}</span>
+                    <span style="color: #94a3b8; font-size: 0.9rem;">({{ registros | length }} registros)</span>
+                </h2>
+                
+                {% if registros %}
+                <table>
+                    <thead>
+                        <tr>
+                            {% if registros[0] %}
+                                {% for key in registros[0].keys() %}
+                                <th>{{ key | replace('_', ' ') | upper }}</th>
+                                {% endfor %}
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in registros %}
+                        <tr>
+                            {% for key, value in row.items() %}
+                            <td>
+                                {% if key == 'password' and value|length > 20 %}
+                                    <span class="hash">{{ value[:30] }}...</span>
+                                {% elif key == 'estado' %}
+                                    <span class="badge badge-{{ value }}">{{ value }}</span>
+                                {% elif key == 'rol' %}
+                                    <span class="badge badge-{{ value }}">{{ value }}</span>
+                                {% elif key == 'fecha' or key == 'creado_en' %}
+                                    {{ value }}
+                                {% else %}
+                                    {{ value }}
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p style="color: #94a3b8; text-align: center; padding: 2rem;">
+                    No hay registros en esta tabla
+                </p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="error-message">
+                <h3>No se pudieron cargar los datos</h3>
+                <p>Error al conectar con la base de datos</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin · MediCare</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        h1 { color: #38bdf8; }
+        .btn {
+            background: #38bdf8;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-danger { background: #ef4444; }
+        .btn-success { background: #10b981; }
+        .card {
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #38bdf8;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            color: #94a3b8;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #1e293b;
+        }
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .badge-admin { background: #38bdf8; color: black; }
+        .badge-medico { background: #2dd4bf; color: black; }
+        .badge-paciente { background: #8b5cf6; color: white; }
+        .badge-secretaria { background: #f59e0b; color: black; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #38bdf8;
+            width: 500px;
+            z-index: 1000;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👑 Panel de Administración</h1>
+            <div>
+                <button class="btn" onclick="abrirModal()">➕ Nuevo Usuario</button>
+                <a href="/db-viewer" class="btn btn-success">📊 Ver BD</a>
+                <a href="/logout" class="btn btn-danger">Cerrar sesión</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Usuarios del sistema</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usuarios %}
+                    <tr>
+                        <td>{{ u[0] }}</td>
+                        <td>{{ u[1] }}</td>
+                        <td>{{ u[2] }}</td>
+                        <td><span class="badge badge-{{ u[4] }}">{{ u[4] }}</span></td>
+                        <td>{{ u[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <h3 style="color: white; margin-bottom: 1.5rem;">Crear Nuevo Usuario</h3>
+        <form action="/crear_usuario" method="POST">
+            <div class="form-group">
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label>Rol</label>
+                <select name="rol" required>
+                    <option value="paciente">🧑 Paciente</option>
+                    <option value="medico">👨‍⚕️ Médico</option>
+                    <option value="secretaria">📋 Secretaria</option>
+                    <option value="admin">👑 Administrador</option>
+                </select>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button type="submit" class="btn">Guardar</button>
+                <button type="button" class="btn btn-danger" onclick="cerrarModal()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

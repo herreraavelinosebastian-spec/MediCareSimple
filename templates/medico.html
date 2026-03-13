@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Médico · MediCare</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: rgba(30,41,59,0.9);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #2dd4bf;
+        }
+        h1 { color: #2dd4bf; }
+        .btn {
+            background: #2dd4bf;
+            color: black;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-danger { background: #ef4444; color: white; }
+        .card {
+            background: rgba(30,41,59,0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #2dd4bf;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            padding: 1rem;
+            color: #94a3b8;
+            border-bottom: 2px solid #334155;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #1e293b;
+        }
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .badge-pendiente { background: #f59e0b; color: black; }
+        .badge-confirmado { background: #10b981; color: white; }
+        .badge-cancelado { background: #ef4444; color: white; }
+        .badge-completado { background: #6366f1; color: white; }
+        .badge-en-curso { background: #38bdf8; color: black; }
+        .action-btn {
+            background: #8b5cf6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2px;
+        }
+        .btn-iniciar {
+            background: #38bdf8;
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👨‍⚕️ Panel Médico - {{ session.user_nombre }}</h1>
+            <a href="/logout" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+
+        <div class="card">
+            <h2 style="color: #2dd4bf; margin-bottom: 1.5rem;">📋 Mis turnos asignados</h2>
+            
+            {% if turnos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Paciente</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in turnos %}
+                    <tr>
+                        <td>{{ t[1] }}</td>
+                        <td>{{ t[4] }}</td>
+                        <td>{{ t[2] }}</td>
+                        <td>
+                            <span class="badge badge-{{ t[3]|replace(' ', '-') }}">{{ t[3] }}</span>
+                        </td>
+                        <td>
+                            {% if t[3] == 'pendiente' %}
+                                <a href="/medico/iniciar_consulta/{{ t[0] }}" class="btn-iniciar">▶ Iniciar consulta</a>
+                            {% endif %}
+                            {% if t[3] in ['pendiente', 'en curso'] %}
+                                <a href="/medico/historial/{{ t[5] }}?turno_id={{ t[0] }}" class="action-btn">📋 Historial y completar</a>
+                            {% else %}
+                                <a href="/medico/historial/{{ t[5] }}" class="action-btn">📋 Ver historial</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p style="color: #94a3b8;">No tienes turnos asignados</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

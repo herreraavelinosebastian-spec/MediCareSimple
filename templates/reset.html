@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nueva Contraseña · MediCare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.9);
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid #38bdf8;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.5);
+        }
+        h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: white;
+        }
+        .btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: #38bdf8;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #2dd4bf;
+        }
+        .error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            color: #fecaca;
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        small {
+            color: #94a3b8;
+            display: block;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Nueva Contraseña</h2>
+            <p>Ingresa tu nueva contraseña</p>
+            
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+            
+            <form action="/reset/{{ token }}" method="POST">
+                <div class="form-group">
+                    <label>Nueva contraseña</label>
+                    <input type="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirmar contraseña</label>
+                    <input type="password" name="confirmar" placeholder="Repite la contraseña" required>
+                </div>
+                <small>Debe tener mayúscula, minúscula y número</small>
+                <button type="submit" class="btn" style="margin-top: 1.5rem;">Cambiar contraseña</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

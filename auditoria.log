@@ -1,0 +1,207 @@
+2026-03-11 02:43:02,483 - INFO - Admin inicial creado
+2026-03-11 02:43:02,668 - INFO - Secretaria creada
+2026-03-11 02:43:02,856 - INFO - Médico creado
+2026-03-11 02:43:03,046 - INFO - Paciente de ejemplo creado
+2026-03-11 02:43:03,145 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-11 02:43:03,146 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-11 02:43:03,147 - INFO -  * Restarting with stat
+2026-03-11 02:43:03,439 - WARNING -  * Debugger is active!
+2026-03-11 02:43:03,442 - INFO -  * Debugger PIN: 871-953-454
+2026-03-11 02:43:12,427 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:12] "GET / HTTP/1.1" 200 -
+2026-03-11 02:43:12,527 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-11 02:43:15,648 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-11 02:43:15,656 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-11 02:43:16,010 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:16] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2026-03-11 02:43:17,005 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:17] "GET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-03-11 02:43:17,100 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:17] "GET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-03-11 02:43:17,134 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:17] "GET /admin?__debugger__=yes&cmd=resource&f=console.png&s=MeoGgTUQqbDN5n0iRY8g HTTP/1.1" 200 -
+2026-03-11 02:43:17,506 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:17] "GET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-03-11 02:43:24,632 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-11 02:43:24,634 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-11 02:43:25,169 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:25] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2026-03-11 02:43:25,487 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:25] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-03-11 02:43:25,488 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:25] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-03-11 02:43:25,744 - INFO - 127.0.0.1 - - [11/Mar/2026 02:43:25] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png&s=MeoGgTUQqbDN5n0iRY8g HTTP/1.1[0m" 304 -
+2026-03-11 02:45:23,672 - INFO - 127.0.0.1 - - [11/Mar/2026 02:45:23] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:45:25,546 - INFO - 127.0.0.1 - - [11/Mar/2026 02:45:25] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-11 02:45:29,292 - INFO - 127.0.0.1 - - [11/Mar/2026 02:45:29] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:45:33,119 - INFO - 127.0.0.1 - - [11/Mar/2026 02:45:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-11 02:45:33,426 - INFO - 127.0.0.1 - - [11/Mar/2026 02:45:33] "GET / HTTP/1.1" 200 -
+2026-03-11 02:52:17,205 - INFO -  * Detected change in 'C:\\Users\\sebas\\OneDrive\\Escritorio\\MediCareSimple\\app.py', reloading
+2026-03-11 02:52:17,298 - INFO -  * Restarting with stat
+2026-03-11 02:52:17,602 - WARNING -  * Debugger is active!
+2026-03-11 02:52:17,605 - INFO -  * Debugger PIN: 871-953-454
+2026-03-11 02:52:35,354 - INFO - Admin inicial creado
+2026-03-11 02:52:35,542 - INFO - Secretaria creada
+2026-03-11 02:52:35,736 - INFO - Médico creado
+2026-03-11 02:52:35,925 - INFO - Paciente de ejemplo creado
+2026-03-11 02:52:36,052 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-11 02:52:36,052 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-11 02:52:36,054 - INFO -  * Restarting with stat
+2026-03-11 02:52:36,325 - WARNING -  * Debugger is active!
+2026-03-11 02:52:36,327 - INFO -  * Debugger PIN: 871-953-454
+2026-03-11 02:52:40,094 - INFO - 127.0.0.1 - - [11/Mar/2026 02:52:40] "GET / HTTP/1.1" 200 -
+2026-03-11 02:52:42,932 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-11 02:52:42,934 - INFO - 127.0.0.1 - - [11/Mar/2026 02:52:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-11 02:52:42,947 - INFO - 127.0.0.1 - - [11/Mar/2026 02:52:42] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:52:44,533 - INFO - 127.0.0.1 - - [11/Mar/2026 02:52:44] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-11 02:53:11,226 - INFO - Registro exitoso - juanito@hotmail.com
+2026-03-11 02:53:11,228 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:11] "POST /registro HTTP/1.1" 200 -
+2026-03-11 02:53:13,356 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-11 02:53:13,358 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-11 02:53:13,367 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:13] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:53:14,437 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:14] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-11 02:53:19,018 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:19] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:53:24,568 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:24] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:53:25,524 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-11 02:53:25,842 - INFO - 127.0.0.1 - - [11/Mar/2026 02:53:25] "GET / HTTP/1.1" 200 -
+2026-03-11 02:56:17,440 - INFO - 127.0.0.1 - - [11/Mar/2026 02:56:17] "GET / HTTP/1.1" 200 -
+2026-03-11 02:56:20,779 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-11 02:56:20,781 - INFO - 127.0.0.1 - - [11/Mar/2026 02:56:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-11 02:56:20,785 - INFO - 127.0.0.1 - - [11/Mar/2026 02:56:20] "GET /admin HTTP/1.1" 200 -
+2026-03-11 02:56:24,462 - INFO - 127.0.0.1 - - [11/Mar/2026 02:56:24] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-11 03:02:22,108 - INFO - 127.0.0.1 - - [11/Mar/2026 03:02:22] "GET /admin HTTP/1.1" 200 -
+2026-03-11 07:13:42,874 - INFO - 127.0.0.1 - - [11/Mar/2026 07:13:42] "GET / HTTP/1.1" 200 -
+2026-03-11 07:33:52,055 - INFO - Registro exitoso - sebastian_7805@hotmail.com
+2026-03-11 07:33:52,057 - INFO - 127.0.0.1 - - [11/Mar/2026 07:33:52] "POST /registro HTTP/1.1" 200 -
+2026-03-11 07:33:55,349 - INFO - 127.0.0.1 - - [11/Mar/2026 07:33:55] "GET /recuperar HTTP/1.1" 200 -
+2026-03-11 07:34:06,128 - INFO - \u2705 Email enviado a: sebastian_7805@hotmail.com
+2026-03-11 07:34:06,131 - INFO - 127.0.0.1 - - [11/Mar/2026 07:34:06] "POST /recuperar HTTP/1.1" 200 -
+2026-03-12 22:37:43,229 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-12 22:37:43,229 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-12 22:37:43,230 - INFO -  * Restarting with stat
+2026-03-12 22:37:43,567 - WARNING -  * Debugger is active!
+2026-03-12 22:37:43,570 - INFO -  * Debugger PIN: 446-482-078
+2026-03-12 22:38:09,962 - INFO - 127.0.0.1 - - [12/Mar/2026 22:38:09] "GET / HTTP/1.1" 200 -
+2026-03-12 22:38:10,025 - INFO - 127.0.0.1 - - [12/Mar/2026 22:38:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-12 22:39:23,849 - INFO - Registro exitoso - juan@gmail.com
+2026-03-12 22:39:23,849 - INFO - 127.0.0.1 - - [12/Mar/2026 22:39:23] "POST /registro HTTP/1.1" 200 -
+2026-03-12 22:39:35,380 - INFO - 127.0.0.1 - - [12/Mar/2026 22:39:35] "POST /login HTTP/1.1" 200 -
+2026-03-12 22:39:49,208 - INFO - Login exitoso - juan@gmail.com - paciente
+2026-03-12 22:39:49,209 - INFO - 127.0.0.1 - - [12/Mar/2026 22:39:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:39:49,242 - INFO - 127.0.0.1 - - [12/Mar/2026 22:39:49] "GET /paciente HTTP/1.1" 200 -
+2026-03-12 22:40:39,354 - INFO - 127.0.0.1 - - [12/Mar/2026 22:40:39] "[32mPOST /paciente/crear_turno HTTP/1.1[0m" 302 -
+2026-03-12 22:40:39,363 - INFO - 127.0.0.1 - - [12/Mar/2026 22:40:39] "GET /paciente HTTP/1.1" 200 -
+2026-03-12 22:40:47,749 - INFO - 127.0.0.1 - - [12/Mar/2026 22:40:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:40:48,060 - INFO - 127.0.0.1 - - [12/Mar/2026 22:40:48] "GET / HTTP/1.1" 200 -
+2026-03-12 22:41:00,626 - INFO - Login exitoso - juan@gmail.com - paciente
+2026-03-12 22:41:00,627 - INFO - 127.0.0.1 - - [12/Mar/2026 22:41:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:41:00,634 - INFO - 127.0.0.1 - - [12/Mar/2026 22:41:00] "GET /paciente HTTP/1.1" 200 -
+2026-03-12 22:42:24,664 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:24] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:42:24,755 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:24] "GET / HTTP/1.1" 200 -
+2026-03-12 22:42:39,853 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-12 22:42:39,853 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:42:39,869 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:39] "GET /admin HTTP/1.1" 200 -
+2026-03-12 22:42:50,530 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:50] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-12 22:42:58,596 - INFO - 127.0.0.1 - - [12/Mar/2026 22:42:58] "GET /admin HTTP/1.1" 200 -
+2026-03-12 22:43:07,931 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:43:07,938 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:07] "GET / HTTP/1.1" 200 -
+2026-03-12 22:43:22,647 - INFO - Login exitoso - secretaria@medicare.com - secretaria
+2026-03-12 22:43:22,648 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:43:22,674 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:22] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 22:43:42,039 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:43:42,118 - INFO - 127.0.0.1 - - [12/Mar/2026 22:43:42] "GET / HTTP/1.1" 200 -
+2026-03-12 22:44:00,782 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 22:44:00,783 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:44:00,798 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:00] "GET /medico HTTP/1.1" 200 -
+2026-03-12 22:44:07,232 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:07] "GET /medico/historial/1 HTTP/1.1" 200 -
+2026-03-12 22:44:13,245 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:13] "GET /medico HTTP/1.1" 200 -
+2026-03-12 22:44:32,209 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:44:32,215 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:32] "GET / HTTP/1.1" 200 -
+2026-03-12 22:44:52,356 - INFO - Login exitoso - paciente@ejemplo.com - paciente
+2026-03-12 22:44:52,357 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:44:52,363 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:52] "GET /paciente HTTP/1.1" 200 -
+2026-03-12 22:44:55,999 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:55] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:44:56,317 - INFO - 127.0.0.1 - - [12/Mar/2026 22:44:56] "GET / HTTP/1.1" 200 -
+2026-03-12 22:45:24,544 - INFO - Login exitoso - secretaria@medicare.com - secretaria
+2026-03-12 22:45:24,544 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:45:24,551 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:24] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 22:45:36,179 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:45:36,491 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:36] "GET / HTTP/1.1" 200 -
+2026-03-12 22:45:43,400 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 22:45:43,400 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:45:43,407 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:43] "GET /medico HTTP/1.1" 200 -
+2026-03-12 22:45:46,126 - INFO - 127.0.0.1 - - [12/Mar/2026 22:45:46] "GET /medico/historial/1 HTTP/1.1" 200 -
+2026-03-12 22:46:23,743 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:23] "[32mPOST /medico/agregar_historial/1 HTTP/1.1[0m" 302 -
+2026-03-12 22:46:24,057 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:24] "GET /medico/historial/1 HTTP/1.1" 200 -
+2026-03-12 22:46:27,643 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:27] "GET /medico HTTP/1.1" 200 -
+2026-03-12 22:46:35,360 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:46:35,367 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:35] "GET / HTTP/1.1" 200 -
+2026-03-12 22:46:53,778 - INFO - Login exitoso - secretaria@medicare.com - secretaria
+2026-03-12 22:46:53,779 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:46:53,785 - INFO - 127.0.0.1 - - [12/Mar/2026 22:46:53] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 22:48:29,931 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:29] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:48:30,008 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:30] "GET / HTTP/1.1" 200 -
+2026-03-12 22:48:36,101 - INFO - Login exitoso - admin@medicare.com - admin
+2026-03-12 22:48:36,102 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:48:36,107 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:36] "GET /admin HTTP/1.1" 200 -
+2026-03-12 22:48:41,082 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:41] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-12 22:48:58,240 - INFO - 127.0.0.1 - - [12/Mar/2026 22:48:58] "GET /db-viewer HTTP/1.1" 200 -
+2026-03-12 22:49:00,987 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:00] "GET /admin HTTP/1.1" 200 -
+2026-03-12 22:49:03,096 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:49:03,103 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:03] "GET / HTTP/1.1" 200 -
+2026-03-12 22:49:08,942 - INFO - Login exitoso - paciente@ejemplo.com - paciente
+2026-03-12 22:49:08,943 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:49:08,949 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:08] "GET /paciente HTTP/1.1" 200 -
+2026-03-12 22:49:12,709 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:12] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:49:13,022 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:13] "GET / HTTP/1.1" 200 -
+2026-03-12 22:49:22,159 - INFO - Login exitoso - secretaria@medicare.com - secretaria
+2026-03-12 22:49:22,160 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:49:22,166 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:22] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 22:49:30,323 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:49:30,415 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:30] "GET / HTTP/1.1" 200 -
+2026-03-12 22:49:38,216 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 22:49:38,217 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 22:49:38,223 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:38] "GET /medico HTTP/1.1" 200 -
+2026-03-12 22:49:40,130 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:40] "GET /medico/historial/1 HTTP/1.1" 200 -
+2026-03-12 22:49:49,677 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 22:49:49,685 - INFO - 127.0.0.1 - - [12/Mar/2026 22:49:49] "GET / HTTP/1.1" 200 -
+2026-03-12 23:02:17,972 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-12 23:02:17,972 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-12 23:02:17,974 - INFO -  * Restarting with stat
+2026-03-12 23:02:18,304 - WARNING -  * Debugger is active!
+2026-03-12 23:02:18,306 - INFO -  * Debugger PIN: 446-482-078
+2026-03-12 23:02:50,668 - INFO - 127.0.0.1 - - [12/Mar/2026 23:02:50] "GET / HTTP/1.1" 200 -
+2026-03-12 23:03:01,623 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 23:03:01,624 - INFO - 127.0.0.1 - - [12/Mar/2026 23:03:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 23:03:01,636 - INFO - 127.0.0.1 - - [12/Mar/2026 23:03:01] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:07:38,253 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-12 23:07:38,253 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-12 23:07:38,255 - INFO -  * Restarting with stat
+2026-03-12 23:07:38,536 - WARNING -  * Debugger is active!
+2026-03-12 23:07:38,538 - INFO -  * Debugger PIN: 446-482-078
+2026-03-12 23:08:10,536 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:10] "[32mGET /medico HTTP/1.1[0m" 302 -
+2026-03-12 23:08:10,546 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:10] "GET / HTTP/1.1" 200 -
+2026-03-12 23:08:10,803 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-12 23:08:15,055 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 23:08:15,056 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 23:08:15,071 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:15] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:08:23,794 - INFO - Turno 1 marcado como 'en curso' por médico 3
+2026-03-12 23:08:23,795 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:23] "[32mGET /medico/iniciar_consulta/1 HTTP/1.1[0m" 302 -
+2026-03-12 23:08:24,099 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:24] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:08:26,159 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:26] "GET /medico/historial/7?turno_id=1 HTTP/1.1" 200 -
+2026-03-12 23:08:30,387 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:30] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:08:31,937 - INFO - 127.0.0.1 - - [12/Mar/2026 23:08:31] "GET /medico/historial/7?turno_id=1 HTTP/1.1" 200 -
+2026-03-12 23:09:04,531 - INFO - Turno 1 completado automáticamente al guardar historial
+2026-03-12 23:09:04,535 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:04] "[32mPOST /medico/agregar_historial/7 HTTP/1.1[0m" 302 -
+2026-03-12 23:09:04,545 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:04] "GET /medico/historial/7?turno_id=1 HTTP/1.1" 200 -
+2026-03-12 23:09:06,840 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:06] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:09:39,744 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:39] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 23:09:39,808 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:39] "GET / HTTP/1.1" 200 -
+2026-03-12 23:09:45,081 - INFO - Login exitoso - secretaria@medicare.com - secretaria
+2026-03-12 23:09:45,081 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 23:09:45,097 - INFO - 127.0.0.1 - - [12/Mar/2026 23:09:45] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 23:10:18,297 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:18] "[32mPOST /secretaria/crear_turno HTTP/1.1[0m" 302 -
+2026-03-12 23:10:18,305 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:18] "GET /secretaria HTTP/1.1" 200 -
+2026-03-12 23:10:23,604 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:23] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-03-12 23:10:23,922 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:23] "GET / HTTP/1.1" 200 -
+2026-03-12 23:10:29,988 - INFO - Login exitoso - medico@medicare.com - medico
+2026-03-12 23:10:29,989 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-03-12 23:10:29,995 - INFO - 127.0.0.1 - - [12/Mar/2026 23:10:29] "GET /medico HTTP/1.1" 200 -
+2026-03-12 23:11:44,185 - INFO - 127.0.0.1 - - [12/Mar/2026 23:11:44] "GET /medico/historial/7 HTTP/1.1" 200 -
+2026-03-12 23:11:56,116 - INFO - 127.0.0.1 - - [12/Mar/2026 23:11:56] "GET /medico HTTP/1.1" 200 -

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Espacio · MediCare</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: rgba(30,41,59,0.9);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #38bdf8;
+        }
+        h1 { color: #38bdf8; }
+        .btn {
+            background: #38bdf8;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-danger { background: #ef4444; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .card {
+            background: rgba(30,41,59,0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #38bdf8;
+        }
+        .card h2 { color: #38bdf8; margin-bottom: 1.5rem; }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            padding: 1rem;
+            color: #94a3b8;
+            border-bottom: 2px solid #334155;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #1e293b;
+        }
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .badge-pendiente { background: #f59e0b; color: black; }
+        .badge-confirmado { background: #10b981; color: white; }
+        .badge-cancelado { background: #ef4444; color: white; }
+        .badge-completado { background: #6366f1; color: white; }
+        .action-btn {
+            background: #ef4444;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .historial-item {
+            background: #0f172a;
+            border-left: 4px solid #38bdf8;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Mi espacio de salud</h1>
+            <a href="/logout" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+
+        <div class="grid">
+            <!-- Turnos -->
+            <div class="card">
+                <h2>📅 Mis turnos</h2>
+                {% if turnos %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Médico</th>
+                            <th>Motivo</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for t in turnos %}
+                        <tr>
+                            <td>{{ t[1] }}</td>
+                            <td>{{ t[4] }}</td>
+                            <td>{{ t[2] }}</td>
+                            <td><span class="badge badge-{{ t[3] }}">{{ t[3] }}</span></td>
+                            <td>
+                                {% if t[3] == 'pendiente' %}
+                                <a href="/paciente/cancelar_turno/{{ t[0] }}" class="action-btn">Cancelar</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No tienes turnos</p>
+                {% endif %}
+            </div>
+
+            <!-- Solicitar turno -->
+            <div class="card">
+                <h2>➕ Solicitar turno</h2>
+                <form action="/paciente/crear_turno" method="POST">
+                    <div class="form-group">
+                        <label>Médico</label>
+                        <select name="medico_id" required>
+                            <option value="">Seleccionar</option>
+                            {% for m in medicos %}
+                            <option value="{{ m[0] }}">{{ m[1] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora</label>
+                        <select name="hora" required>
+                            {% for h in range(8,23) %}
+                                {% for m in ['00','30'] %}
+                                <option value="{{ '%02d'|format(h) }}:{{ m }}">{{ '%02d'|format(h) }}:{{ m }}</option>
+                                {% endfor %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo</label>
+                        <textarea name="motivo" rows="2" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Solicitar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Historial -->
+        <div style="margin-top: 2rem;">
+            <div class="card">
+                <h2>📋 Mi historial</h2>
+                {% if historial %}
+                    {% for h in historial %}
+                    <div class="historial-item">
+                        <div><strong>{{ h[3] }}</strong> - Dr. {{ h[7] }}</div>
+                        <div>{{ h[4] }}</div>
+                        {% if h[5] %}<div>Receta: {{ h[5] }}</div>{% endif %}
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <p>No hay historial</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

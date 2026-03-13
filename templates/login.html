@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediCare · Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.9);
+            padding: 2.5rem;
+            border-radius: 32px;
+            border: 1px solid #38bdf8;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.5);
+        }
+        h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        h2 span { color: #38bdf8; }
+
+        /* Pestañas */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: #0f172a;
+            padding: 0.5rem;
+            border-radius: 50px;
+        }
+        .tab {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: transparent;
+            color: #94a3b8;
+        }
+        .tab.active {
+            background: #38bdf8;
+            color: white;
+        }
+
+        /* Formularios */
+        .form {
+            display: block;
+        }
+        .form.hidden {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: white;
+        }
+        .btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: #38bdf8;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn:hover { background: #2dd4bf; }
+
+        .mensaje {
+            background: rgba(16,185,129,0.2);
+            border: 1px solid #10b981;
+            color: #6ee7b7;
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .error {
+            background: rgba(239,68,68,0.2);
+            border: 1px solid #ef4444;
+            color: #fecaca;
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .password-requirements {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Medi<span>Care</span></h2>
+            
+            {% if mensaje %}
+            <div class="mensaje">{{ mensaje }}</div>
+            {% endif %}
+            
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+            
+            <!-- Pestañas -->
+            <div class="tabs">
+                <button class="tab active" id="btnLogin" onclick="mostrarLogin()">Iniciar Sesión</button>
+                <button class="tab" id="btnRegistro" onclick="mostrarRegistro()">Registrarse</button>
+            </div>
+            
+            <!-- FORMULARIO DE LOGIN -->
+            <div id="loginForm" class="form">
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Iniciar sesión</button>
+                </form>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="/recuperar" style="color: #38bdf8;">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+            
+            <!-- FORMULARIO DE REGISTRO -->
+            <div id="registroForm" class="form hidden">
+                <form action="/registro" method="POST" onsubmit="return validarRegistro()">
+                    <div class="form-group">
+                        <label>Nombre completo</label>
+                        <input type="text" name="nombre" id="reg_nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="reg_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" id="reg_password" required>
+                        <div class="password-requirements">
+                            • Mínimo 8 caracteres<br>
+                            • Al menos una mayúscula<br>
+                            • Al menos una minúscula<br>
+                            • Al menos un número
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarLogin() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('registroForm').classList.add('hidden');
+            document.getElementById('btnLogin').classList.add('active');
+            document.getElementById('btnRegistro').classList.remove('active');
+        }
+        
+        function mostrarRegistro() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registroForm').classList.remove('hidden');
+            document.getElementById('btnLogin').classList.remove('active');
+            document.getElementById('btnRegistro').classList.add('active');
+        }
+        
+        function validarRegistro() {
+            const nombre = document.getElementById('reg_nombre').value;
+            const email = document.getElementById('reg_email').value;
+            const password = document.getElementById('reg_password').value;
+            
+            if (nombre.length < 3) {
+                alert('El nombre debe tener al menos 3 caracteres');
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Ingresa un email válido');
+                return false;
+            }
+            
+            if (password.length < 8) {
+                alert('La contraseña debe tener al menos 8 caracteres');
+                return false;
+            }
+            
+            if (!/[A-Z]/.test(password)) {
+                alert('La contraseña debe incluir al menos una mayúscula');
+                return false;
+            }
+            
+            if (!/[a-z]/.test(password)) {
+                alert('La contraseña debe incluir al menos una minúscula');
+                return false;
+            }
+            
+            if (!/[0-9]/.test(password)) {
+                alert('La contraseña debe incluir al menos un número');
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>
